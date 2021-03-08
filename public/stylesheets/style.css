@@ -7,9 +7,61 @@
 }
 
 body {
-  padding: 50px;
   font: 14px 'Press Start 2P', cursive;
+}
 
 a {
   color: #00B7FF;
+  text-decoration: none;
+}
+
+/* layout css part */
+
+.header-wrapper{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+#pokedex-logo{
+  width: 12vw;
+}
+
+.fa-user{
+padding-right: 20px;
+}
+
+footer{
+  height: 20vh;
+  background-color:#D23939 ;
+}
+
+.footer-container
+{
+  width: 100%;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items:center;
+}
+.footer-container img{
+  width: 10vw;
+
+}
+
+.footer-container p{
+  text-align: center;
+  color:white ;
+
+}
+/* index(/home) css layout */
+
+.index-background {
+  background-image:url(/images/layout/index.png);
+background-size: 100%;
+  position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  margin: 0;
 }
