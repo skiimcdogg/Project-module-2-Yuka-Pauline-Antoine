@@ -6,6 +6,7 @@ const userSchema = new Schema({
         pseudo: String,
         email: String,
         password: String,
+        avatar: String,
         region: {
             type: String,
             enum: ["Kanto", "Johto", "Hoenn", "Sinnoh", "Unys", "Kalos", "Alola", "Galar"]
