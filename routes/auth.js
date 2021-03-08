@@ -41,7 +41,7 @@ router.get("/signup", (req, res) => {
   res.render("users/signup");
 });
 
-router.post("/signup", (req, res, next) => {
+router.post("/signup", async (req, res, next) => {
   try {
     const newUser = { ...req.body };
     const foudUser = await UserModel.findOne({email : newUser.email});
