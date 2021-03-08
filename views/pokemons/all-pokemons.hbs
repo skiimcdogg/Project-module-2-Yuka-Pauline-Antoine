@@ -1,15 +1,8 @@
 <div><i class="fas fa-bars"></i> <h2>filter</h2> </div>
 
 
-{{#each data}}
-<img src="{{this.image}}" alt="">
-<h1>{{this.name}}</h1>
-<p>{{this.ability}}</p>
-{{/each}}
+{{#each pokemon}}
+<a href="/pokemons/{{this.id}}"><img src="{{this.sprites.front_default}}"></a>
 
-<a href=""></a>
-{{#each data.results}}
-<img src="{{this.image}}" alt="">
 <h1>{{this.name}}</h1>
-<p>{{this.url}}</p>
 {{/each}}
