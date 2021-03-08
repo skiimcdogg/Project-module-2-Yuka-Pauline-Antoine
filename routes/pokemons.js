@@ -11,6 +11,7 @@ router.get("/pokemons", (req, res, next) => { //name of route to define//
 
     P.getPokemonsList(interval) //see all pokemons//
     .then((pokemon) => {
+        console.log(pokemon)
         res.render("pokemons/all-pokemons", { data: pokemon });
     })
     .catch((err) => {
