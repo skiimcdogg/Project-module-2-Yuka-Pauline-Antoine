@@ -3,9 +3,12 @@ const Schema = mongoose.Schema;
 
 const pokeSchema = new Schema({
 
-        name: Object,
-        type: [String],
-        base: Object,
+        name: String,
+        types: [Object],
+        height: Number,
+        weight: Number,
+        stats: [Object],
+        moves: [Object]
 
 })
 
