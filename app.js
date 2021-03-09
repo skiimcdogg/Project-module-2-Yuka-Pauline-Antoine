@@ -34,8 +34,8 @@ app.use(
   })
 );
 
-app.use(require("./middlewares/exposeFlashMessage"));
-app.use(require("./middlewares/exposeLoginStatus"));
+// app.use(require("./middlewares/exposeFlashMessage"));
+// app.use(require("./middlewares/exposeLoginStatus"));
 
 app.use('/', indexRouter);
 app.use('/', authRouter);
