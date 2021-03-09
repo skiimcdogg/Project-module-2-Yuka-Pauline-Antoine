@@ -5,7 +5,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+var flash = require("connect-flash");
 var Pokedex = require('pokedex-promise-v2');
 var P = new Pokedex();
 var app = express();
