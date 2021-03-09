@@ -7,9 +7,12 @@
 <p> {{pokemon.height}}</p>
 <strong>Weight:</strong>
 <p> {{pokemon.weight}}</p>
+{{#each pokemon.types}}
+<p>{{this.type.name}}</p>
+{{/each}}
 </div>
 
-<form method ="post" action="/pokemons/{{pokemon.name}}/{{pokemon.height}}/{{pokemon.weight}}">
+<form method ="post" action="/pokemons/{{pokemon.name}}/{{pokemon.height}}/{{pokemon.weight}}/{{pokemon.types}}/{{pokemon.stats}}/{{pokemon.moves}}">
 <button>+</button>
 </form>
 

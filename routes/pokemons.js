@@ -37,13 +37,16 @@ router.get("/pokemons/:id", (req, res, next) => {
     })
 })
 
-router.post("/pokemons/:name/:height/:weight", (req, res, next) => {
+router.post("/pokemons/:name/:height/:weight/:types/:stats/:moves", (req, res, next) => {
     // console.log(req.params.name, req.params.height, req.params.weight)
     const name = req.params.name;
     const height = req.params.height;
     const weight = req.params.weight;
+    const types = req.params.types;
+    const stats = req.params.stats;
+    const moves = req.params.moves;
 
-    pokeModel.create({ name, height, weight })
+    pokeModel.create({ name, height, weight, types, stats, moves })
     .then(() => {
         res.redirect("/pokemons")
     })
