@@ -7,6 +7,11 @@ const userSchema = new Schema({
         email: String,
         password: String,
         avatar: String,
+        role: {
+            type: String,
+            enum: ["admin", "user"],
+            default: "user"
+        },
         region: {
             type: String,
             enum: ["Kanto", "Johto", "Hoenn", "Sinnoh", "Unys", "Kalos", "Alola", "Galar"]

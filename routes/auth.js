@@ -8,7 +8,7 @@ router.get("/", (req, res, next) => {
 });
 
 router.get("/signin", (req, res, next) => {
-  res.render("pokemons/signin");
+  res.render("users/signin");
 });
 
 router.post("/signin", async (req, res, next) => {
@@ -19,7 +19,7 @@ router.post("/signin", async (req, res, next) => {
     if (!foundUser) {
       res.redirect("/signin");
     } else {
-      const isSamePassword = bcrypt.compareSync(password, founUser.password);
+      const isSamePassword = bcrypt.compareSync(password, foundUser.password);
 
       if (!isSamePassword) {
         res.redirect("/signin");
@@ -44,12 +44,12 @@ router.get("/signup", (req, res) => {
 router.post("/signup", async (req, res, next) => {
   try {
     const newUser = { ...req.body };
-    const foudUser = await UserModel.findOne({email : newUser.email});
+    const foundUser = await UserModel.findOne({email : newUser.email});
 
     if(foundUser) {
         res.redirect("/signin");
     } else {
-        const hashedPassword = bcrypt.hashSync(newuser.pssword, 10);
+        const hashedPassword = bcrypt.hashSync(newUser.password, 10);
         newUser.password = hashedPassword;
 
         await UserModel.create(newUser);
