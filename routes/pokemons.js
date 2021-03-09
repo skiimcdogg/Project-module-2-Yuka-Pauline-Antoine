@@ -2,7 +2,9 @@ const express = require("express"); // import express in this module
 const router = new express.Router(); // create an app sub-module (router)
 const Pokedex = require('pokedex-promise-v2');
 const P = new Pokedex();
-const pokeModel = require('./../models/Pokemon')
+const pokeModel = require('./../models/Pokemon');
+const userModel = require('./../models/User');
+const protectRoute = require("./../middlewares/protectPrivateRoute");
 
 router.get("/pokemons", (req, res, next) => { //name of route to define//
     var interval = {
@@ -37,22 +39,46 @@ router.get("/pokemons/:id", (req, res, next) => {
     })
 })
 
-router.post("/pokemons/:name/:height/:weight/:types/:stats/:moves", (req, res, next) => {
+router.post("/pokemons/create", protectRoute, (req, res, next) => {
     // console.log(req.params.name, req.params.height, req.params.weight)
-    const name = req.params.name;
-    const height = req.params.height;
-    const weight = req.params.weight;
-    const types = req.params.types;
-    const stats = req.params.stats;
-    const moves = req.params.moves;
 
-    pokeModel.create({ name, height, weight, types, stats, moves })
-    .then(() => {
-        res.redirect("/pokemons")
+
+req.body.types = req.body.types.split(",");
+req.body.stats = req.body.stats.split(",");
+req.body.moves = req.body.moves.split(",");
+const newPokemon = req.body; 
+
+//creer le pokemon et recupérer son id
+pokeModel.create(newPokemon)
+.then((dbRes)=>{
+    const pokeId = dbRes._id
+    userModel.findOneAndUpdate({ email: req.session.currentuser.email })
+    .then((dbRes2) => {
+       const result = dbRes2
+       result.pokeFav.push(pokeId)
     })
-    .catch((err) => {
-        next(err)
-    })
+    
 })
+//Trouver mon user and update son array de favories
+
+
+//
+    // userModel.findOne({ email: req.session.currentuser.email }).then(dbRes => {
+    // pokeModel.create({ name, height, weight, types, stats, moves })
+    // .then((dbRes2) => {
+    //     const array = dbRes.pokeFav;
+    //     const pokeId = dbRes2._id;
+    //    const pokeFavo = array.push(pokeId)
+    //    userModel.findOneAndUpdate(id,{ pokeFav }).then(dbRes3 => {
+    //         console.log(pokeFav);
+    //    })
+       
+    // }).catch((err) => {
+    //     next(err)
+    // })
+    // res.send(req.body)
+})
+
+
 
 module.exports = router;
