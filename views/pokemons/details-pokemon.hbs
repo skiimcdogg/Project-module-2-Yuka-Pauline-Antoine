@@ -16,9 +16,6 @@
 <input type="hidden" name="name" value={{pokemon.name}}>
 <input type="hidden" name="height" value={{pokemon.height}}>
 <input type="hidden" name="weight" value={{pokemon.weight}}>
-{{!-- <input type="hidden" name="stats" value={{pokemon.stats}}>
-<input type="hidden" name="moves" value={{pokemon.moves}}> --}}
-
 <input type="hidden" name="types" value={{#each pokemon.types}}{{this.type.name}}{{#unless @last}},{{/unless}}{{/each}}>
 <input type="hidden" name="stats" value={{#each pokemon.stats}}{{this.stat.name}}{{#unless @last}},{{/unless}}{{/each}}>
 <input type="hidden" name="moves" value={{#each pokemon.moves}}{{this.move.name}}{{#unless @last}},{{/unless}}{{/each}}>

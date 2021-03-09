@@ -11,15 +11,12 @@ router.get("/pokemons", (req, res, next) => { //name of route to define//
         limit: 50,
         offset: 0
       }
-
     P.getPokemonsList(interval) //see all pokemons//
-
     .then((pokemon) => {
         const arr = pokemon.results.map(p => p.url)
-
         P.resource(arr)
         .then((dbRes) => {
-            console.log(dbRes)
+            // console.log(dbRes)
             res.render("pokemons/all-pokemons", { pokemon: dbRes });
         })
     })
@@ -41,23 +38,24 @@ router.get("/pokemons/:id", (req, res, next) => {
 
 router.post("/pokemons/create", protectRoute, (req, res, next) => {
     // console.log(req.params.name, req.params.height, req.params.weight)
-
-
 req.body.types = req.body.types.split(",");
 req.body.stats = req.body.stats.split(",");
 req.body.moves = req.body.moves.split(",");
 const newPokemon = req.body; 
-
 //creer le pokemon et recupérer son id
 pokeModel.create(newPokemon)
 .then((dbRes)=>{
     const pokeId = dbRes._id
-    userModel.findOneAndUpdate({ email: req.session.currentuser.email })
+    userModel.findOneAndUpdate({ email: req.session.currentuser.email }, { $push: {pokeFav: pokeId} }, { new: true })
     .then((dbRes2) => {
-       const result = dbRes2
-       result.pokeFav.push(pokeId)
+    //    const result = dbRes2
+    //    result.pokeFav.push(pokeId)
+       console.log(dbRes2);
+       res.redirect("/users")
     })
-    
+    .catch((err) => {
+        next(err)
+    })
 })
 //Trouver mon user and update son array de favories
 
@@ -78,7 +76,6 @@ pokeModel.create(newPokemon)
     // })
     // res.send(req.body)
 })
-
 
 
 module.exports = router;

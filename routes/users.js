@@ -10,7 +10,7 @@ router.get("/", protectRoute, (req, res, next) => {
   userModel
     .findOne({ email: req.session.currentuser.email })
     .then((dbRes) => {
-      console.log(dbRes);
+      // console.log(dbRes);
       res.render("users/my-page", dbRes);
     })
     .catch((err) => {
@@ -22,7 +22,7 @@ router.get("/edit/:id", protectRoute, (req, res, next) => {
   userModel
     .findOne({ email: req.session.currentuser.email })
     .then((dbRes) => {
-      console.log(dbRes);
+      // console.log(dbRes);
       res.render("users/edit-my-page", dbRes);
     })
     .catch((err) => {
