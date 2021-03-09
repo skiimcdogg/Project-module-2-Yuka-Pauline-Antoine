@@ -29,7 +29,7 @@ router.post("/signin", async (req, res, next) => {
 
         req.session.currentuser = userObject;
 
-        res.redirect("/");
+        res.redirect("/users");
       }
     }
   } catch (err) {

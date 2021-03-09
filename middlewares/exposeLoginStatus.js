@@ -1,5 +1,5 @@
 module.exports = function exposeLoginStatus(req, res, next) {
-    if (!req.session.currentUser) {
+    if (!req.session.currentuser) {
       // il n'y pas d'user correspondant à ce client stocké en session
       res.locals.currentUser = undefined; // les variables suivantes sont dispos pour le template
       res.locals.isLoggedIn = false;
