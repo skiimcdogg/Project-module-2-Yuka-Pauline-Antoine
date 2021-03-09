@@ -1,0 +1,28 @@
+<form method="post" action="/users/edit/{{_id}}" id="form_user">
+    <div class="form-item-wrapper flexed-item">
+      <label for="pseudo" class="label-ref label">Pseudo</label>
+      <input id="pseudo" name="pseudo" type="text" class="input-text input" placeholder="Sacha" required value="{{pseudo}}">
+    </div>
+      <label for="email" class="label-ref label">Email</label>
+      <input id="email" name="email" type="email" class="input-text input" placeholder="SachaBourville@outlook.com" required value="{{email}}">
+    </div>
+    <div class="form-item-wrapper flexed-item">
+    <label for="region">Region</label>
+    <select name="region" id="region">
+        <option selected value="Kanto">Kanto</option>
+        <option value="Johto">Johto</option>
+        <option value="Hoenn">Hoenn</option>
+        <option value="Sinnoh">Sinnoh</option>
+        <option value="Unys">Unys</option>
+        <option value="Kalos">Kalos</option>
+        <option value="Alola">Alola</option>
+        <option value="Galar">Galar</option>
+    </select>
+    </div>
+    {{!-- <div class="form-item-wrapper flexed-item">
+      <label for="password" class="label-ref label">Password</label>
+      <input id="password" name="password" type="password" class="input-text input" placeholder="••••••" required value="1234">
+    </div> --}}
+    <button class="button-primary white">Update !</button>
+  </form>
+ 

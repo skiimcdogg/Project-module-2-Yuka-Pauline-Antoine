@@ -1,0 +1,10 @@
+<h1>Hello users</h1>
+
+<ul>
+    {{#each users}}
+    <li>{{this.pseudo}}</li>
+    <li>{{this.email}}</li>
+    <li>{{this.region}}</li>
+    <li><a href="adminDelete/{{this._id}}">Delete</a></li>
+    {{/each}}
+</ul>
