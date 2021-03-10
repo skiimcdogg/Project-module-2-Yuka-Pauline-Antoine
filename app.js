@@ -29,13 +29,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(
   session({
     secret: "ASecretStringThatSouldBeHARDTOGUESS/CRACK",
+    cookie: { maxAge: 600000},
     saveUninitialized: true,
     resave: true,
   })
 );
 
 // app.use(require("./middlewares/exposeFlashMessage"));
-// app.use(require("./middlewares/exposeLoginStatus"));
+app.use(require("./middlewares/exposeLoginStatus"));
 
 app.use('/', indexRouter);
 app.use('/', authRouter);

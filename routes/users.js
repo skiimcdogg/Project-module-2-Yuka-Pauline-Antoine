@@ -54,6 +54,22 @@ router.get("/delete/:id", protectRoute, (req, res, next) => {
     });
 });
 
+
+
+router.get("/delete/:id/pokemon", protectRoute, (req, res, next) => {
+  pokeModel
+    .findByIdAndDelete(req.params.id)
+    .then(() => {
+      res.redirect("/users");
+    })
+    .catch((err) => {
+      next(err);
+    });
+});
+
+
+
+
 /* GET the users page. */
 
 router.get("/all", protectAdmin, (req, res, next) => {
