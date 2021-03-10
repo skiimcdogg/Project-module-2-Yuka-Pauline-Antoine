@@ -8,6 +8,7 @@ var logger = require('morgan');
 var flash = require("connect-flash");
 var session = require("express-session");
 var Pokedex = require('pokedex-promise-v2');
+const hbs = require("hbs");
 var P = new Pokedex();
 var app = express();
 
@@ -19,6 +20,7 @@ var pokemonRouter = require("./routes/pokemons");
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+hbs.registerPartials(__dirname + "/views/partials");
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -34,8 +36,12 @@ app.use(
     resave: true,
   })
 );
-
-// app.use(require("./middlewares/exposeFlashMessage"));
+app.use(flash());
+app.use(function myCookieLogger(req, res, next) {
+  console.log(req.cookies);
+  next();
+})
+app.use(require("./middlewares/exposeFlashMessage"));
 app.use(require("./middlewares/exposeLoginStatus"));
 
 app.use('/', indexRouter);
