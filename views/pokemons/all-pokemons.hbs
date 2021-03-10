@@ -1,10 +1,13 @@
-<div><i class="fas fa-bars"></i> <h2>filter</h2> </div>
+
 
 
 {{#each pokemon}}
+<div class="pokemons-wrapper">
+<div class="pokemons">
 <a href="/pokemons/{{this.id}}"><img src="{{this.sprites.front_default}}"></a>
-
 <h1>{{this.name}}</h1>
+</div>
+</div>
 {{/each}}
 
 <a href="/pokemons/">Page 1</a>
@@ -18,4 +21,6 @@
 <a href="/pokemons/08">Page 9</a>
 <a href="/pokemons/09">Page 10</a>
 
+ 
+ {{> footer}}
  
