@@ -100,6 +100,98 @@ router.get("/pokemons/4", (req, res, next) => { //name of route to define//
         next(err)
     })
 })
+router.get("/pokemons/5", (req, res, next) => { //name of route to define//
+    var interval = {
+        limit: 50,
+        offset: 250
+      }
+    P.getPokemonsList(interval) //see all pokemons//
+    .then((pokemon) => {
+        const arr = pokemon.results.map(p => p.url)
+        P.resource(arr)
+        .then((dbRes) => {
+            // console.log(dbRes)
+            res.render("pokemons/all-pokemons", { pokemon: dbRes });
+        })
+    })
+    .catch((err) => {
+        next(err)
+    })
+})
+
+router.get("/pokemons/6", (req, res, next) => { //name of route to define//
+    var interval = {
+        limit: 50,
+        offset: 300
+      }
+    P.getPokemonsList(interval) //see all pokemons//
+    .then((pokemon) => {
+        const arr = pokemon.results.map(p => p.url)
+        P.resource(arr)
+        .then((dbRes) => {
+            // console.log(dbRes)
+            res.render("pokemons/all-pokemons", { pokemon: dbRes });
+        })
+    })
+    .catch((err) => {
+        next(err)
+    })
+})
+
+router.get("/pokemons/7", (req, res, next) => { //name of route to define//
+    var interval = {
+        limit: 50,
+        offset: 350
+      }
+    P.getPokemonsList(interval) //see all pokemons//
+    .then((pokemon) => {
+        const arr = pokemon.results.map(p => p.url)
+        P.resource(arr)
+        .then((dbRes) => {
+            // console.log(dbRes)
+            res.render("pokemons/all-pokemons", { pokemon: dbRes });
+        })
+    })
+    .catch((err) => {
+        next(err)
+    })
+})
+router.get("/pokemons/8", (req, res, next) => { //name of route to define//
+    var interval = {
+        limit: 50,
+        offset: 400
+      }
+    P.getPokemonsList(interval) //see all pokemons//
+    .then((pokemon) => {
+        const arr = pokemon.results.map(p => p.url)
+        P.resource(arr)
+        .then((dbRes) => {
+            // console.log(dbRes)
+            res.render("pokemons/all-pokemons", { pokemon: dbRes });
+        })
+    })
+    .catch((err) => {
+        next(err)
+    })
+})
+router.get("/pokemons/9", (req, res, next) => { //name of route to define//
+    var interval = {
+        limit: 43,
+        offset: 450
+      }
+    P.getPokemonsList(interval) //see all pokemons//
+    .then((pokemon) => {
+        const arr = pokemon.results.map(p => p.url)
+        P.resource(arr)
+        .then((dbRes) => {
+            // console.log(dbRes)
+            res.render("pokemons/all-pokemons", { pokemon: dbRes });
+        })
+    })
+    .catch((err) => {
+        next(err)
+    })
+})
 
 router.get("/pokemons/:id", (req, res, next) => {
     // console.log(req.params.id)
