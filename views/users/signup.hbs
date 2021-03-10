@@ -3,7 +3,7 @@
     <h1 class="form-title">Let's become a pokemon's trainer !</h1>
     <p class="form-subtitle">Welcome to the family</p>
   </header>
-  <form method="post" action="/signup" id="form_user">
+  <form method="post" action="/signup" id="form_user" enctype="multipart/form-data">
   {{> flashMessage }}
     <div class="form">
       <label for="pseudo" class="label-ref label">Pseudo</label>
@@ -39,9 +39,4 @@
   <p class="form-sub-infos">Already have an account ? <a href="/signin" class="button-link-form">Sign In</a></p>
 </section>
 
- <footer>
-      <div class="footer-container">
-      <a href="/"><img  src="images/layout/bleu-poke.png" alt=""></a>
-        <p>Return top</p> 
-      </div>
-    </footer>
+ 

@@ -1,0 +1,17 @@
+ <div class="header-wrapper">   
+      <a href="/pokemons"><img id="pokedex-logo" src="/images/layout/pokedex-logo.png" alt=""></a>
+   
+    <nav>
+      {{#unless isLoggedIn}}
+        <a href="/signin">
+          <span class="btn-text">Sign in</span>
+        </a>
+        {{/unless}}
+        {{#if isLoggedIn}}
+        <a href="/signout">
+          <span class="btn-text">Log out</span>
+        </a>
+        {{/if}}
+      <a href="/users/all">just admin</a>
+      <a href="/users"><i class="fas fa-user"></i></a>
+    </nav></div>

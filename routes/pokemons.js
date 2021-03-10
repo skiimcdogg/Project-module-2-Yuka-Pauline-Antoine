@@ -25,7 +25,7 @@ router.get("/pokemons", (req, res, next) => { //name of route to define//
     })
 })
 
-router.get("/pokemons/1", (req, res, next) => { //name of route to define//
+router.get("/pokemons/01", (req, res, next) => { //name of route to define//
     var interval = {
         limit: 50,
         offset: 50
@@ -44,7 +44,7 @@ router.get("/pokemons/1", (req, res, next) => { //name of route to define//
     })
 })
 
-router.get("/pokemons/2", (req, res, next) => { //name of route to define//
+router.get("/pokemons/02", (req, res, next) => { //name of route to define//
     var interval = {
         limit: 50,
         offset: 100
@@ -63,7 +63,7 @@ router.get("/pokemons/2", (req, res, next) => { //name of route to define//
     })
 })
 
-router.get("/pokemons/3", (req, res, next) => { //name of route to define//
+router.get("/pokemons/03", (req, res, next) => { //name of route to define//
     var interval = {
         limit: 50,
         offset: 150
@@ -82,7 +82,7 @@ router.get("/pokemons/3", (req, res, next) => { //name of route to define//
     })
 })
 
-router.get("/pokemons/4", (req, res, next) => { //name of route to define//
+router.get("/pokemons/04", (req, res, next) => { //name of route to define//
     var interval = {
         limit: 50,
         offset: 200
@@ -100,7 +100,7 @@ router.get("/pokemons/4", (req, res, next) => { //name of route to define//
         next(err)
     })
 })
-router.get("/pokemons/5", (req, res, next) => { //name of route to define//
+router.get("/pokemons/05", (req, res, next) => { //name of route to define//
     var interval = {
         limit: 50,
         offset: 250
@@ -119,7 +119,7 @@ router.get("/pokemons/5", (req, res, next) => { //name of route to define//
     })
 })
 
-router.get("/pokemons/6", (req, res, next) => { //name of route to define//
+router.get("/pokemons/06", (req, res, next) => { //name of route to define//
     var interval = {
         limit: 50,
         offset: 300
@@ -138,7 +138,7 @@ router.get("/pokemons/6", (req, res, next) => { //name of route to define//
     })
 })
 
-router.get("/pokemons/7", (req, res, next) => { //name of route to define//
+router.get("/pokemons/07", (req, res, next) => { //name of route to define//
     var interval = {
         limit: 50,
         offset: 350
@@ -156,7 +156,7 @@ router.get("/pokemons/7", (req, res, next) => { //name of route to define//
         next(err)
     })
 })
-router.get("/pokemons/8", (req, res, next) => { //name of route to define//
+router.get("/pokemons/08", (req, res, next) => { //name of route to define//
     var interval = {
         limit: 50,
         offset: 400
@@ -174,7 +174,7 @@ router.get("/pokemons/8", (req, res, next) => { //name of route to define//
         next(err)
     })
 })
-router.get("/pokemons/9", (req, res, next) => { //name of route to define//
+router.get("/pokemons/09", (req, res, next) => { //name of route to define//
     var interval = {
         limit: 43,
         offset: 450

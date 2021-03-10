@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const UserModel = require("./../models/User");
+const uploader = require('./../config/cloudinary');
 const bcrypt = require("bcrypt");
 
 router.get("/", (req, res, next) => {
@@ -43,9 +44,12 @@ router.get("/signup", (req, res) => {
   res.render("users/signup");
 });
 
-router.post("/signup", async (req, res, next) => {
+router.post("/signup", uploader.single("avatar"), async (req, res, next) => {
+  const newUser = { ...req.body };
+  if (!req.file) newUser.avatar = undefined;
+  else newUser.avatar = req.file.path;
+  console.log(req.file);
   try {
-    const newUser = { ...req.body };
     const foundUser = await UserModel.findOne({email : newUser.email});
 
     if(foundUser) {
@@ -54,7 +58,7 @@ router.post("/signup", async (req, res, next) => {
     } else {
         const hashedPassword = bcrypt.hashSync(newUser.password, 10);
         newUser.password = hashedPassword;
-
+        
         await UserModel.create(newUser);
         req.flash("success", "Congrats ! You are now registered !");
         res.redirect("/signin")

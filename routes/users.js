@@ -4,6 +4,7 @@ const protectRoute = require("./../middlewares/protectPrivateRoute");
 const protectAdmin = require("./../middlewares/protectAdminRoute")
 const userModel = require("./../models/User");
 const pokeModel = require("./../models/Pokemon");
+const uploader = require('./../config/cloudinary');
 
 /* GET user page. */
 router.get("/", protectRoute, (req, res, next) => {
@@ -31,10 +32,13 @@ router.get("/edit/:id", protectRoute, (req, res, next) => {
     });
 });
 
-router.post("/edit/:id", protectRoute, (req, res, next) => {
-  const { pseudo, email, region } = req.body;
+router.post("/edit/:id", protectRoute, uploader.single("avatar"), (req, res, next) => {
+  const { pseudo, email, region, avatar } = req.body;
+  const newUser = { ...req.body };
+  if (!req.file) newUser.avatar = undefined;
+  else newUser.avatar = req.file.path;
   userModel
-    .findByIdAndUpdate(req.params.id, req.body)
+    .findByIdAndUpdate(req.params.id, newUser)
     .then(() => {
       res.redirect("/users");
     })
