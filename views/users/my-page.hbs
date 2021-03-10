@@ -6,3 +6,9 @@
 
 <a href="/users/edit/{{_id}}">Update</a>
 <a href="/users/delete/{{_id}}">Delete your account</a>
+
+<h3>Your pokemons:</h3>
+{{#each pokeFav}}
+<img src="{{this.image}}">
+<p>{{this.name}}</p>
+{{/each}}

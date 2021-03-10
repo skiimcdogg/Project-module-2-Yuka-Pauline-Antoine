@@ -9,6 +9,7 @@ const pokeModel = require("./../models/Pokemon");
 router.get("/", protectRoute, (req, res, next) => {
   userModel
     .findOne({ email: req.session.currentuser.email })
+    .populate("pokeFav")
     .then((dbRes) => {
       // console.log(dbRes);
       res.render("users/my-page", dbRes);

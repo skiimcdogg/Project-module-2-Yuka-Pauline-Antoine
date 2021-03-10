@@ -57,24 +57,6 @@ pokeModel.create(newPokemon)
         next(err)
     })
 })
-//Trouver mon user and update son array de favories
-
-
-//
-    // userModel.findOne({ email: req.session.currentuser.email }).then(dbRes => {
-    // pokeModel.create({ name, height, weight, types, stats, moves })
-    // .then((dbRes2) => {
-    //     const array = dbRes.pokeFav;
-    //     const pokeId = dbRes2._id;
-    //    const pokeFavo = array.push(pokeId)
-    //    userModel.findOneAndUpdate(id,{ pokeFav }).then(dbRes3 => {
-    //         console.log(pokeFav);
-    //    })
-       
-    // }).catch((err) => {
-    //     next(err)
-    // })
-    // res.send(req.body)
 })
 
 
