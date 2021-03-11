@@ -2,14 +2,15 @@
 <form method="post" action="/users/edit/{{_id}}" id="form_user" enctype="multipart/form-data">
     <div class="form">
       <label for="pseudo" class="label-ref label">Pseudo</label>
-      <input id="pseudo" name="pseudo" type="text" class="input-text input" placeholder="Sacha" required value="{{pseudo}}">
+      <input id="pseudo" name="pseudo" type="text" class="input-text input" required value="{{pseudo}}">
     </div>
     <div class="form">
       <label for="avatar" class="label-ref label">Avatar</label>
       <input type="file" id="avatar" name="avatar" class="input-text input">
     </div>
+       <div class="form">
       <label for="email" class="label-ref label">Email</label>
-      <input name="email" type="email" class="input-text input" placeholder="SachaBourville@outlook.com" required value="{{email}}">
+      <input id="email" name="email" type="email" class="input-text input" placeholder="SachaBourville@outlook.com" required value="yo@gui.com">
     </div>
     <div class="form">
     <label for="region" class="label-ref label">Region</label>

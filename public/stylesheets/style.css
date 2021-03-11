@@ -1,69 +1,68 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
-*{
+* {
   padding: 0;
-  margin: 0;
+  
   box-sizing: border-box;
 }
 
 body {
-  font: 14px 'Press Start 2P', cursive;
+  font: 14px "Press Start 2P", cursive;
 }
 
 a {
-  color: #00B7FF;
+  color: #00b7ff;
   text-decoration: none;
 }
 
+
+
 /* layout css part */
 
-.header-wrapper{
+.header-wrapper {
+  position: fixed;
+  top: 0%;
+  left: 0%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  background-color: #00b7ff;
+  width: 100%;
+  padding: 0.2%;
 }
-#pokedex-logo{
+
+.header-wrapper a {
+  color: white;
+}
+#pokedex-logo {
   width: 12vw;
 }
 
-.fa-user{
-padding-right: 20px;
+.fa-user {
+  padding-right: 20px;
 }
 
-footer{
-  height: 20vh;
-  background-color:#D23939 ;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer-container
-{
+.footer-container {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
-.footer-container img{
+.footer-container img {
   width: 10vw;
-
 }
 
-.footer-container p{
+.footer-container p {
   text-align: center;
-  color:white ;
-
+  color: white;
 }
 /* index(/home) css layout */
 
 .index-background {
-  background-image:url(/images/layout/index.png);
-background-size: cover;
+  background-image: url(/images/layout/index.png);
+  background-size: cover;
   position: center;
   background-repeat: no-repeat;
   height: 100vh;
@@ -71,69 +70,65 @@ background-size: cover;
   margin: 0;
 }
 
-
-
-
 /* all pokemon CSS  */
-.pokemons-wrapper{
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-justify-content: space-between;
+.pokemons-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.pokemons{
+.pokemons {
   width: 25%;
   font-size: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 3%;
+  margin-top: 5.5%;
 }
 
-
-.add_pokemon_button{
+.add_pokemon_button {
   background: none;
   border: none;
   margin-top: 10%;
   width: 5%;
 }
 
-.add_pokemon_button img{
+.add_pokemon_button img {
   width: 100%;
 }
 
-.page-list{
+.page-list {
   display: flex;
-  justify-content: center; 
- margin-top: 50px;
+  justify-content: center;
+  margin-top: 50px;
   margin-bottom: 15px;
-
 }
 
-.page-list a{
+.page-list a {
   margin-right: 50px;
+  color: #00b7ff;
 }
-
 
 /* detail pokemon CSS */
 
-.details-pokemon{
+.details-pokemon {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+  margin-top: 6%;
 }
 
-.pokedex{
-position: relative;
-margin: 50px;
+.pokedex {
+  position: relative;
+  margin: 50px;
 }
-.pokedex img{
+.pokedex img {
   width: 40vw;
 }
-.poke_name{
+.poke_name {
   position: absolute;
   top: 32%;
   left: 60%;
@@ -146,8 +141,7 @@ margin: 50px;
   justify-content: center;
 }
 
-
-.pokemon_sprite{
+.pokemon_sprite {
   position: absolute;
   top: 29%;
   left: 9%;
@@ -157,18 +151,68 @@ margin: 50px;
   justify-content: center;
 }
 
-.pokemon_sprite img{
+.pokemon_sprite img {
   width: 10vw;
 }
 
-
-.info_pokemon
-
-.info_detail_poke{
-padding-top:2% ;
-padding-bottom: 2%;
+.info_pokemon .info_detail_poke {
+  padding-top: 2%;
+  padding-bottom: 2%;
 }
-.info_detail_stats{
-  padding-top:2% ;
+.info_detail_stats {
+  padding-top: 2%;
 }
+
+.forbidden-ronflex {
+  width: 50vw;
+    /* height: 50vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0%;
+    position: relative;
+    margin-top: 22%;
+}
+
+.forbidden-ronflex img {
+  max-width: 126%;
+  z-index: -1;
+  position: absolute;
+  left: 30%;
+  right: 0%;
+}
+
+footer {
+  height: 20vh;
+  background-color: #d23939;
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.details-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.user {
+  margin-top: 7%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.user img {
+  max-width: 7%;
+}
+
 

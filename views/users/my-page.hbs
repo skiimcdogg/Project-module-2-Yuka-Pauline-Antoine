@@ -1,19 +1,24 @@
-<h1>Welcome to your page</h1>
-<img src="{{avatar}}">
-<h2>{{pseudo}}</h2>
-<h3>{{region}}</h3>
-<p>{{email}}</p>
+<section class="user">
+  <h1>Welcome to your page</h1>
+  <img src="{{avatar}}">
+  <h2>{{pseudo}}</h2>
+  <h3>{{region}}</h3>
+  <p>{{email}}</p>
+  <div>
+    <a href="/users/edit/{{_id}}"><i class="fas fa-paint-brush"></i></a>
+    <a href="/users/delete/{{_id}}"><i class="fas fa-trash-alt"></i></a>
+  </div>
+</section>
+<hr>
 
-<a href="/users/edit/{{_id}}">Update</a>
-<a href="/users/delete/{{_id}}">Delete your account</a>
-
-<h3>Your pokemons:</h3>
-{{#each pokeFav}}
- <img src="{{this.image}}">
- <p>{{this.name}}</p>
-   <a href="/users/edit/{{this._id}}/pokemon">change name</a> 
-  <a href="/users/delete/{{this._id}}/pokemon">x</a> 
-
-{{/each}}
-
- {{> footer}}
+<section class="details-list">
+  {{#each pokeFav}}
+  <div class="pokefav-details">
+    <img src="{{this.image}}">
+    <p>{{this.name}}</p>
+    <a href="/users/edit/{{this._id}}/pokemon"><i class="fas fa-paint-brush"></i></a>
+    <a href="/users/delete/{{this._id}}/pokemon"><i class="fas fa-trash-alt"></i></a>
+  </div>
+  {{/each}}
+</section>
+{{> footer}}
