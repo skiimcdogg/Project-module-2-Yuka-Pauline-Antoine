@@ -1,5 +1,48 @@
 <h1>Hello users</h1>
 
+<table class="users-table">
+    <thead>
+      <tr class="table-row">
+           {{!-- <th class="table-head"> avatar</th> --}}
+        <th class="table-head"> pseudo</th>
+        <th class="table-head">email</th>
+        <th class="table-head"> region</th>
+        {{!-- <th class="table-head">Edit</th> --}}
+        <th class="table-head">Delete</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {{#each users}}
+      <tr class="table-row">
+          {{!-- <td class="table-division">
+  <div><img src="{{this.avatar}}" alt="img" class="avatar-size" /></div>
+</td> --}}
+<td class="table-division">
+  <div>{{this.pseudo}}</div>
+</td>
+<td class="table-division">
+  <div>{{this.email}}</div>
+</td>
+<td class="table-division">
+  <div>{{this.region}}</div>
+</td>
+{{!-- <td class="table-division">
+
+<a href="/sneakers/prod-edit/{{this._id}}"><span class="fa fa-edit table-icon"></span></a>
+
+  {{!-- <a href="/sneakers/prod-edit/{{this._id}}" data-id-sneaker="{{this._id}}" class="fa fa-edit table-icon"></a> --}}
+{{!-- </td> --}} 
+<td class="table-division">
+  <a href="adminDelete/{{this._id}}"><i class="fas fa-trash-alt"></i></a>
+  {{!-- <span class="fa fa-trash table-icon" aria-hidden="true"></span> --}}
+</td>
+      </tr>
+      {{/each}}
+
+    </tbody>
+  </table>
+{{!-- 
 <ul>
     {{#each users}}
     <li>{{this.pseudo}}</li>
@@ -7,6 +50,6 @@
     <li>{{this.region}}</li>
     <li><a href="adminDelete/{{this._id}}">Delete</a></li>
     {{/each}}
-</ul>
+</ul> --}}
 
  {{> footer}}

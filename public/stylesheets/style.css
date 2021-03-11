@@ -211,8 +211,28 @@ footer {
   align-items: center;
 }
 
-.user img {
+.avatar-size {
   max-width: 7%;
 }
 
 
+/* allUsers CSS */
+.users-table{
+  margin: 7%;
+}
+
+
+th{
+  width: 20vw;
+  margin-bottom: 50%;
+}
+
+td{
+  text-align: center;
+  width: 20vw;
+}
+
+.table-row{
+  display: block;
+  margin-bottom: 3%;
+}
