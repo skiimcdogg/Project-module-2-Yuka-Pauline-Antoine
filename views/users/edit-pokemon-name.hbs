@@ -1,7 +1,12 @@
-<form action="/users/edit/{{pokemon._id}}/pokemon" method="post">
+
+<section class="form-container">
+
+   <img src="{{pokemon.image}}" alt="">
+<form action="/users/edit/{{pokemon._id}}/pokemon" method="post" id="form_user">
    <div class="form-item-wrapper flexed-item">
       <label for="name" class="label-ref label">Name</label>
-      <input id="name" name="name" type="text" class="input-text input" value="{{pokemon.name}}"  required>
+      <input name="name" type="text" class="input-text input" value="{{pokemon.name}}"  required>
 </div>
-<button>change !</button>
+<button class="btn">change !</button>
 </form>
+</section>
