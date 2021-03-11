@@ -71,6 +71,29 @@ router.get("/delete/:id/pokemon", protectRoute, (req, res, next) => {
     });
 });
 
+router.get("/edit/:id/pokemon", protectRoute, (req, res, next) => {
+  pokeModel
+    .findById(req.params.id)
+    .then((pokemon) => {
+      res.render("users/edit-pokemon-name",{ pokemon });
+    })
+    .catch((err) => {
+      next(err);
+    });
+});
+
+
+router.post("/edit/:id/pokemon", protectRoute, (req, res, next) => {
+  pokeModel
+    .findByIdAndUpdate(req.params.id, req.body)
+    .then(() => {
+      res.redirect("/users");
+    })
+    .catch((err) => {
+      next(err);
+    });
+});
+
 
 
 

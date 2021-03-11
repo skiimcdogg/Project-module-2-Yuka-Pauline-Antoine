@@ -11,7 +11,9 @@
 {{#each pokeFav}}
  <img src="{{this.image}}">
  <p>{{this.name}}</p>
+   <a href="/users/edit/{{this._id}}/pokemon">change name</a> 
   <a href="/users/delete/{{this._id}}/pokemon">x</a> 
+
 {{/each}}
 
  {{> footer}}

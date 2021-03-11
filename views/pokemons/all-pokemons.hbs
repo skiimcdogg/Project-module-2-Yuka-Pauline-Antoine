@@ -1,26 +1,33 @@
 
-
+<section class="pokemons-wrapper">
 
 {{#each pokemon}}
-<div class="pokemons-wrapper">
+
 <div class="pokemons">
+
 <a href="/pokemons/{{this.id}}"><img src="{{this.sprites.front_default}}"></a>
 <h1>{{this.name}}</h1>
+
 </div>
-</div>
+
 {{/each}}
+</section>
 
-<a href="/pokemons/">Page 1</a>
-<a href="/pokemons/01">Page 2</a>
-<a href="/pokemons/02">Page 3</a>
-<a href="/pokemons/03">Page 4</a>
-<a href="/pokemons/04">Page 5</a>
-<a href="/pokemons/05">Page 6</a>
-<a href="/pokemons/06">Page 7</a>
-<a href="/pokemons/07">Page 8</a>
-<a href="/pokemons/08">Page 9</a>
-<a href="/pokemons/09">Page 10</a>
+<div class="page-list">
 
+<a href="/pokemons/"> 1</a>
+<a href="/pokemons/01"> 2</a>
+<a href="/pokemons/02"> 3</a>
+<a href="/pokemons/03"> 4</a>
+<a href="/pokemons/04"> 5</a>
+<a href="/pokemons/05"> 6</a>
+<a href="/pokemons/06"> 7</a>
+<a href="/pokemons/07"> 8</a>
+<a href="/pokemons/08"> 9</a>
+<a href="/pokemons/09"> 10</a>
+<a href="/pokemons/010"> 11</a>
+
+</div>
  
  {{> footer}}
  

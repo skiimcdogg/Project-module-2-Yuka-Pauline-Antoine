@@ -1,7 +1,13 @@
+<section class="details-pokemon">
 
-<div>
-<h1>{{pokemon.name}}</h1>
-<img src="{{pokemon.sprites.front_default}}"><br>
+<div class="pokedex" >
+  <img src="/images/layout/pokedexforAll.png" alt="">
+ <div class="pokemon_sprite" ><img src="{{pokemon.sprites.front_default}}"></div>
+ <div class="poke_name"><h1>{{pokemon.name}}</h1></div>
+ </div>
+  
+<div class="info_pokemon">
+
 <strong>Height:</strong>
 <p> {{pokemon.height}}</p>
 <strong>Weight:</strong>
@@ -16,6 +22,8 @@
 {{/each}}
 </div>
 
+
+
 <form method="post" action="/pokemons/create">
 <input type="hidden" name="name" value={{pokemon.name}}>
 <input type="hidden" name="image" value={{pokemon.sprites.front_default}}>
@@ -23,12 +31,15 @@
 <input type="hidden" name="weight" value={{pokemon.weight}}>
 <input type="hidden" name="types" value={{#each pokemon.types}}{{this.type.name}}{{#unless @last}},{{/unless}}{{/each}}>
 <input type="hidden" name="stats" value={{#each pokemon.stats}}{{this.stat.name}}{{#unless @last}},{{/unless}}{{/each}}>
-<input type="hidden" name="stats" value={{#each pokemon.stats}}{{this.base_stat}}{{#unless @last}},{{/unless}}{{/each}}>
+<input type="hidden" name="base_stat" value={{#each pokemon.stats}}{{this.base_stat}}{{#unless @last}},{{/unless}}{{/each}}>
 <input type="hidden" name="moves" value={{#each pokemon.moves}}{{this.move.name}}{{#unless @last}},{{/unless}}{{/each}}>
-<button>+</button>
+<button class="add_pokemon_button"> <img src="/images/layout/Poké_Ball-RS.png" alt=""> </button>
 </form>
 
-</div>
+</section>
+
+
+
 
 <footer>
       <div class="footer-container">

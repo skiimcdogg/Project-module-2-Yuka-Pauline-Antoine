@@ -8,6 +8,7 @@ const pokeSchema = new Schema({
         height: Number,
         weight: Number,
         stats: [String],
+        base_stat: [String],
         moves: [String],
         image: String
 
