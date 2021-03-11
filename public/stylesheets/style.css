@@ -34,15 +34,20 @@ padding-right: 20px;
 footer{
   height: 20vh;
   background-color:#D23939 ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer-container
 {
   width: 100%;
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items:center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
 }
 .footer-container img{
   width: 10vw;
@@ -58,7 +63,7 @@ footer{
 
 .index-background {
   background-image:url(/images/layout/index.png);
-background-size: 100%;
+background-size: cover;
   position: center;
   background-repeat: no-repeat;
   height: 100vh;
@@ -84,12 +89,14 @@ justify-content: space-between;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top: 3%;
 }
 
 
 .add_pokemon_button{
   background: none;
   border: none;
+  margin-top: 10%;
   width: 5%;
 }
 
@@ -128,19 +135,40 @@ margin: 50px;
 }
 .poke_name{
   position: absolute;
-  top: 170px;
-  left: 383px;
+  top: 32%;
+  left: 60%;
   color: white;
-  font-size: 85%;
+  font-size: 70%;
+  width: 32%;
+  height: 17%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
 .pokemon_sprite{
   position: absolute;
-  top: 125px;
-  left: 77px;
+  top: 29%;
+  left: 9%;
+  width: 32%;
+  height: 31%;
+  display: flex;
+  justify-content: center;
 }
 
 .pokemon_sprite img{
   width: 10vw;
 }
+
+
+.info_pokemon
+
+.info_detail_poke{
+padding-top:2% ;
+padding-bottom: 2%;
+}
+.info_detail_stats{
+  padding-top:2% ;
+}
+

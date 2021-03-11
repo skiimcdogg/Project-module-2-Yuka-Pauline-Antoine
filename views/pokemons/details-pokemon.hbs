@@ -8,21 +8,16 @@
   
 <div class="info_pokemon">
 
-<strong>Height:</strong>
-<p> {{pokemon.height}}</p>
-<strong>Weight:</strong>
-<p> {{pokemon.weight}}</p>
-<strong>Types:</strong>
+<p class="info_detail_poke"> Height: {{pokemon.height}}</p>
+<p class="info_detail_poke">Weight: {{pokemon.weight}}</p>
+<p class="info_detail_poke">Types:
 {{#each pokemon.types}}
-<p>{{this.type.name}}</p>
-{{/each}}
-<strong>Stats:</strong>
+{{this.type.name}}
+{{/each}}</p>
+<p class="info_detail_poke">Stats:</p>
 {{#each pokemon.stats}}
-<p>{{this.stat.name}}: {{this.base_stat}}</p><br>
+<p class="info_detail_stats">{{this.stat.name}}: {{this.base_stat}}</p>
 {{/each}}
-</div>
-
-
 
 <form method="post" action="/pokemons/create">
 <input type="hidden" name="name" value={{pokemon.name}}>
@@ -35,6 +30,12 @@
 <input type="hidden" name="moves" value={{#each pokemon.moves}}{{this.move.name}}{{#unless @last}},{{/unless}}{{/each}}>
 <button class="add_pokemon_button"> <img src="/images/layout/Poké_Ball-RS.png" alt=""> </button>
 </form>
+
+</div>
+
+
+
+
 
 </section>
 
